@@ -1,0 +1,88 @@
+/* Navbar Base Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  color: white;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.react-icon {
+  color: #61dafb;
+  font-size: 1.8rem;
+}
+
+/* Desktop Nav Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Mobile Nav Links (Hidden by Default) */
+.mobile-nav-links {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  list-style: none;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 100;
+}
+
+.mobile-nav-links.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-nav-links li {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+/* Mobile Menu Button (Hidden on Desktop) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide desktop links on mobile */
+  }
+
+  .mobile-menu-btn {
+    display: block; /* Show mobile menu button */
+  }
+}
